@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  text-decoration: none;
+  padding: 0;
+  font-family: "Urbanist", sans-serif;
+}
+.Learn_more_tile {
+  font-size: 48px;
+  width: 325px;
+  color: #fff;
+  font-weight: 400;
+  span {
+    font-weight: 800;
+  }
+}
+.Container_Title {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+.Play_button {
+  width: max-content;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 29px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+.Play_button:hover {
+  background-color: #fff;
+  color: #257882;
+}
+.Learn_more {
+  color: #fff;
+  width: 289px;
+}
+.learn_more_section {
+  background-color: #257882;
+  padding: 90px 132px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cards_container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 700px;
+  gap: 56px;
+  margin-left: 73px;
+}
+
+.card {
+  padding: 38px 24px;
+  gap: 29px;
+  font-size: 20px;
+  background-color: #fff;
+  border-radius: 7px;
+  text-align: center;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title_card {
+  font-weight: 800;
+  font-size: 20px;
+  width: 186px;
+  color: #257882;
+}
+
+.text_card {
+  font-size: 16px;
+  width: 248px;
+  height: 84px;
+}
+
+.image {
+  position: absolute;
+  margin-top: -70px;
+}
