@@ -51,7 +51,7 @@ form{
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: block;
-    width: 500px;
+    width: 300px;
     border: none;
     border-bottom: 1px solid #757575;
 }
@@ -83,7 +83,7 @@ label {
 .bar {
     position: relative;
     display: block;
-    width: 500px;
+    width: 300px;
 }
 
 .bar:before,
@@ -169,21 +169,7 @@ label {
     background: linear-gradient(to bottom, #00A828, #00E035);
 }
 @media (max-width: 576px) {
-    .Forms-conteiner {
-        flex-direction: column-reverse;
-        height: 140vh;
-    }
-.logoForms{
-    width: 25rem;
-}
     form{
-        margin-top: -10rem;
         padding:3rem 1rem;
-    }
-    .input{
-        width: 400px;
-    }
-    .bar{
-        width: 420px;
     }
 }
