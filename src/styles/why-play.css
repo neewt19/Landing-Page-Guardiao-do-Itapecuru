@@ -33,15 +33,13 @@
         justify-content: center;
         align-items: flex-start; 
         text-align: center; 
-        
-        
        
     }
     
     .overlay p {
         padding-left: 50px;
         margin: 30px 0;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .overlay button {
@@ -53,8 +51,13 @@
         border: 2px solid white;
         border-radius: 15px;
         cursor: pointer;
+        transition: background-color 0.1s;
     }
 
+    .overlay button:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+   
     .title-container {
         position: absolute;
         top: 25%; 
@@ -110,6 +113,10 @@
         line-height: 1.4;
     }
 
+    .right-container p.right-container-subtext{
+        font-size: 16px;
+    }
+
     .right-container p::after {
         content: '';
         display: block;
@@ -124,8 +131,14 @@
         position: absolute;
         bottom: -5px;
         right: 10px;
-        font-size: 24px;
+        font-size: 30px;
         margin-left: 150px; 
     }
-
     
+    
+    /*esconde os subtextos*/
+    .right-container-subtext{
+        display: none;
+    }
+    
+   
