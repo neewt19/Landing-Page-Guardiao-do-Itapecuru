@@ -1,3 +1,8 @@
+
+
+
+
+/*parte que alterna entre escondr e aparecer conteudo do menu lateral da pagina "por que jodar*/
 const iconeSub = document.querySelectorAll(".iconSub");
 const subTexto = document.querySelectorAll(".right-container-subtext ");
 
@@ -16,4 +21,5 @@ iconeSub.forEach((icon, index) => {
         }
     });
 });
+
 
