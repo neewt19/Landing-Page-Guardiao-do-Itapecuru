@@ -56,4 +56,5 @@ span {
 
 .section_about_container_image img {
     width: 80%;
+    border-radius: 10px;
 }
