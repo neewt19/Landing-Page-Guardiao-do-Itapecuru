@@ -23,3 +23,8 @@ iconeSub.forEach((icon, index) => {
 });
 
 
+document.querySelector('.hamburger').addEventListener('click', function() {
+    if (window.innerWidth <= 800) {
+        document.querySelector('.button-bar-header').classList.toggle('open');
+    }
+});
