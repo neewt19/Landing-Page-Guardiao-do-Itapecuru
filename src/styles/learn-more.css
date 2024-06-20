@@ -80,3 +80,38 @@
   position: absolute;
   margin-top: -70px;
 }
+@media (max-width: 720px) {
+  .learn_more_section {
+    padding: 40px 0;
+    flex-direction: column;
+  }
+  .card {
+    padding: 30px 14px;
+    font-size: 16px;
+  }
+  .image {
+    margin-top: -55px;
+  }
+  .cards_container {
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    margin-left: 0px;
+  }
+  .Learn_more_tile {
+    font-size: 30px;
+    width: 264px;
+  }
+  .Learn_more {
+    width: 264px;
+  }
+
+  .Container_Title {
+    width: max-content;
+  }
+
+  .text_card {
+    font-size: 16px;
+  }
+}
