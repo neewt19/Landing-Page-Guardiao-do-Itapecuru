@@ -174,16 +174,16 @@ label {
         height: 140vh;
     }
 .logoForms{
-    width: 25rem;
+    width: 15rem;
 }
     form{
-        margin-top: -10rem;
+        margin-top: -15rem;
         padding:3rem 1rem;
     }
     .input{
-        width: 400px;
+        width: 300px;
     }
     .bar{
-        width: 420px;
+        width: 300px;
     }
 }
