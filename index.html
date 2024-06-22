@@ -166,16 +166,27 @@
           <label>Nome do usuário</label>
         </div>
         <div class="group">      
-          <input id="generoInput" class="input" type="text" required>
+          <select id="generoInput" class="input" required>
+            <option value="" disabled selected>Gênero</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Outro">Outro</option>
+          </select>
           <span class="highlight"></span>
           <span class="bar"></span>
-          <label>Gênero</label>
+          <label></label>
         </div>
         <div class="group">      
-          <input id="IdadeInput" class="input" type="number" required>
+          <select id="IdadeInput" class="input" required>
+            <option value="" disabled selected>Selecione sua faixa etária</option>
+            <option value="0 - 12 anos">0 - 12 anos</option>
+            <option value="13 - 17 anos">13 - 17 anos</option>
+            <option value="18 - 64 anos">18 - 64 anos</option>
+            <option value="65 anos ou mais">65 anos ou mais</option>
+          </select>
+          
           <span class="highlight"></span>
           <span class="bar"></span>
-          <label>Faixa etária</label>
         </div>
         <div class="group">      
           <input id="SenhaInput" class="input" type="password" required>
