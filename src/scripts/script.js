@@ -83,7 +83,6 @@ registrationForm.addEventListener('submit', (event) => {
         console.log(Email, Name, Genero, Idade, Senha)
 
         if (data.success) {
-            // Sucesso ao cadastrar
             window.open(Game, '_blank')
             alert('Cadastro realizado com sucesso!')
         } else {
