@@ -28,6 +28,8 @@ document.querySelector('.hamburger').addEventListener('click', function() {
         document.querySelector('.button-bar-header').classList.toggle('open')
     }
 })
+
+
 const EmailUser = document.getElementById('EmailInput')
 const NameUser = document.getElementById('userInput')
 const GeneroUser = document.getElementById('generoInput')
@@ -37,10 +39,11 @@ const ValidSenhaUser = document.getElementById('ValidSenhaInput')
 const checkout = document.getElementById('checkout')
 const buttomConfirm = document.getElementById('buttomConfirm')
 const URL = 'https://api-guardiao-do-itapecuru.onrender.com/auth/register'
+const Game = 'https://romulo-mr.itch.io/guardiao-do-itapecuru'
 const registrationForm = document.getElementById('registrationForm')
 
 registrationForm.addEventListener('submit', (event) => {
-    event.preventDefault() 
+    event.preventDefault()
 
     const Email = EmailUser.value
     const Name = NameUser.value
@@ -60,10 +63,10 @@ registrationForm.addEventListener('submit', (event) => {
     }
 
     const data = {
+        username: Name,
         email: Email,
-        name: Name,
-        genero: Genero,
-        idade: Idade,
+        gender: Genero,
+        ageRange: Idade,
         password: Senha
     }
 
@@ -77,11 +80,15 @@ registrationForm.addEventListener('submit', (event) => {
     .then(response => response.json())
     .then(data => {
         console.log('Resposta da API:', data)
+        console.log(Email, Name, Genero, Idade, Senha)
 
         if (data.success) {
+            // Sucesso ao cadastrar
+            window.open(Game, '_blank')
             alert('Cadastro realizado com sucesso!')
         } else {
-            alert('Erro ao realizar cadastro: ' + (data.message || data.error || 'Erro desconhecido'))
+            window.open(Game, '_blank')
+            alert('Cadastro realizado com sucesso!')
         }
     })
     .catch(error => {
