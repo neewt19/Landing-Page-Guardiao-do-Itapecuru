@@ -29,7 +29,6 @@ document.querySelector('.hamburger').addEventListener('click', function() {
     }
 })
 
-
 const EmailUser = document.getElementById('EmailInput')
 const NameUser = document.getElementById('userInput')
 const GeneroUser = document.getElementById('generoInput')
