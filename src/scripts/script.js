@@ -29,6 +29,7 @@ document.querySelector('.hamburger').addEventListener('click', function() {
     }
 })
 
+
 const EmailUser = document.getElementById('EmailInput')
 const NameUser = document.getElementById('userInput')
 const GeneroUser = document.getElementById('generoInput')
@@ -36,12 +37,12 @@ const IdadeUser = document.getElementById('IdadeInput')
 const SenhaUser = document.getElementById('SenhaInput')
 const ValidSenhaUser = document.getElementById('ValidSenhaInput')
 const checkout = document.getElementById('checkout')
-const buttomConfirm = document.getElementById('buttomConfirm')
 const URL = 'https://api-guardiao-do-itapecuru.onrender.com/auth/register'
 const Game = 'https://romulo-mr.itch.io/guardiao-do-itapecuru'
 const registrationForm = document.getElementById('registrationForm')
 
-registrationForm.addEventListener('submit', (event) => {
+
+registrationForm.addEventListener('submit', async (event) => {
     event.preventDefault()
 
     const Email = EmailUser.value
@@ -56,6 +57,16 @@ registrationForm.addEventListener('submit', (event) => {
         return
     }
 
+    if (Senha.length < 8) {
+        alert('A senha deve ter pelo menos 8 caracteres.')
+        return
+    }
+
+    const senhaRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/
+    if (!senhaRegex.test(Senha)) {
+        alert('A senha deve conter pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial.')
+        return
+    }
     if (!checkout.checked) {
         alert('Você deve aceitar os termos de serviço.')
         return
@@ -69,28 +80,40 @@ registrationForm.addEventListener('submit', (event) => {
         password: Senha
     }
 
-    fetch(URL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Resposta da API:', data)
-        console.log(Email, Name, Genero, Idade, Senha)
+    try {
+        const response = await fetch(URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
 
-        if (data.success) {
+        const result = await response.json()
+
+        // console.log('Resposta da API:', result)
+        // console.log(Email, Name, Genero, Idade, Senha)
+
+        if (response.ok) {
             window.open(Game, '_blank')
             alert('Cadastro realizado com sucesso!')
         } else {
-            window.open(Game, '_blank')
-            alert('Cadastro realizado com sucesso!')
+            if (result.message === 'User already exists') {
+                alert('Usuário já cadastrado. Tente fazer login ou use outro email.')
+            } else {
+                alert(`Erro ao realizar cadastro: usuário já`)
+            }
         }
-    })
-    .catch(error => {
+    } catch (error) {
         console.error('Erro:', error)
-        alert('Erro ao realizar cadastro. Tente novamente mais tarde.')
-    })
+        let errorMessage = 'Erro desconhecido'
+        if (error.message) {
+            errorMessage = error.message
+        } else if (typeof error === 'object') {
+            errorMessage = JSON.stringify(error)
+        }
+
+        alert(`Erro ao realizar cadastro. Tente novamente mais tarde. Detalhes: ${errorMessage}`)
+    }
 })
+
